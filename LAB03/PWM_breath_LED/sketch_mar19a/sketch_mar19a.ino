@@ -21,18 +21,18 @@ void loop() {
   // 逐渐变亮
   for(int dutyCycle = 0; dutyCycle <= 255; dutyCycle++){   
     ledcWrite(ledPin, dutyCycle);   
-    ledcWrite(ledPin_R, dutyCycle); 
-    ledcWrite(ledPin_G, dutyCycle); 
-    ledcWrite(ledPin_Y, dutyCycle);
+    ledcWrite(ledPin_R, 255-dutyCycle); 
+    ledcWrite(ledPin_G, 255-dutyCycle); 
+    ledcWrite(ledPin_Y, 255-dutyCycle);
     delay(10);
   }
 
   // 逐渐变暗
   for(int dutyCycle = 255; dutyCycle >= 0; dutyCycle--){
     ledcWrite(ledPin, dutyCycle); 
-    ledcWrite(ledPin_R, dutyCycle); 
-    ledcWrite(ledPin_G, dutyCycle); 
-    ledcWrite(ledPin_Y, dutyCycle);
+    ledcWrite(ledPin_R, 255-dutyCycle); 
+    ledcWrite(ledPin_G, 255-dutyCycle); 
+    ledcWrite(ledPin_Y, 255-dutyCycle);
 
     delay(10);
   }
