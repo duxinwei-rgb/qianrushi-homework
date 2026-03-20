@@ -1,4 +1,5 @@
 const int ledPin = 2;
+const int ledPin_R = 25;
 
 const unsigned long shortOn = 200;   
 const unsigned long longOn = 600;    
@@ -10,6 +11,7 @@ int step = 0;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
+  pinMode(ledPin_R, OUTPUT);
 }
 
 void loop() {
@@ -17,6 +19,7 @@ void loop() {
   if (currentTime - lastTime >= getStepTime(step)) {
     lastTime = currentTime;
     digitalWrite(ledPin, (step % 2 == 0) ? HIGH : LOW);
+    digitalWrite(ledPin_R, (step % 2 == 0) ? HIGH : LOW);
     step++;
     if (step > 12) step = 0;
   }
