@@ -1,5 +1,5 @@
-const int ledPin_R = 26;  
-const int ledPin_G = 25; 
+const int ledPin_R = 18;  
+const int ledPin_G = 19; 
 const int ledPin = 2; 
 
 
